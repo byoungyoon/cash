@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.gdu.cash.restmapper.CashbookRestMapper">
+	<select id="selectLowerMonthChartToIn" parameterType="java.util.Map" resultType="kr.co.gdu.cash.vo.Cashbook">
+		SELECT NVL(DAY(cashbook_date),0) cashbookDay ,NVL(SUM(cashbook_price),0) cashbookPrice
+		FROM cashbook
+		WHERE MONTH(cashbook_date) = #{month} AND YEAR(cashbook_date) = #{year} AND cashbook_kind = '수입'
+		GROUP BY DAY(cashbook_date)
+		ORDER BY SUM(cashbook_price)
+	</select>
+	
+	<select id="selectLowerMonthChartToOut" parameterType="java.util.Map" resultType="kr.co.gdu.cash.vo.Cashbook">
+		SELECT NVL(DAY(cashbook_date),0) cashbookDay ,NVL(SUM(cashbook_price),0) cashbookPrice
+		FROM cashbook
+		WHERE MONTH(cashbook_date) = #{month} AND YEAR(cashbook_date) = #{year} AND cashbook_kind = '지출'
+		GROUP BY DAY(cashbook_date)
+		ORDER BY SUM(cashbook_price)
+	</select>
+
+	<select id="selectTopMonthChartToIn" parameterType="java.util.Map" resultType="kr.co.gdu.cash.vo.Cashbook">
+		SELECT NVL(DAY(cashbook_date),0) cashbookDay ,NVL(SUM(cashbook_price),0) cashbookPrice
+		FROM cashbook
+		WHERE MONTH(cashbook_date) = #{month} AND YEAR(cashbook_date) = #{year} AND cashbook_kind = '수입'
+		GROUP BY DAY(cashbook_date)
+		ORDER BY SUM(cashbook_price) DESC
+	</select>
+	
+	<select id="selectTopMonthChartToOut" parameterType="java.util.Map" resultType="kr.co.gdu.cash.vo.Cashbook">
+		SELECT NVL(DAY(cashbook_date),0) cashbookDay ,NVL(SUM(cashbook_price),0) cashbookPrice
+		FROM cashbook
+		WHERE MONTH(cashbook_date) = #{month} AND YEAR(cashbook_date) = #{year} AND cashbook_kind = '지출'
+		GROUP BY DAY(cashbook_date)
+		ORDER BY SUM(cashbook_price) DESC
+	</select>
+	
+	<select id="selectYearChartToIn" parameterType="Integer" resultType="java.util.Map">
+		SELECT
+	        NVL(SUM(CASE WHEN MONTH(cashbook_date)=1 THEN cashbook_price END),0) january,
+	        NVL(SUM(CASE WHEN MONTH(cashbook_date)=2 THEN cashbook_price END),0) february,
+	        NVL(SUM(CASE WHEN MONTH(cashbook_date)=3 THEN cashbook_price END),0) march,
+	        NVL(SUM(CASE WHEN MONTH(cashbook_date)=4 THEN cashbook_price END),0) april,
+	        NVL(SUM(CASE WHEN MONTH(cashbook_date)=5 THEN cashbook_price END),0) may,
+	        NVL(SUM(CASE WHEN MONTH(cashbook_date)=6 THEN cashbook_price END),0) june,
+	        NVL(SUM(CASE WHEN MONTH(cashbook_date)=7 THEN cashbook_price END),0) july,
+	        NVL(SUM(CASE WHEN MONTH(cashbook_date)=8 THEN cashbook_price END),0) august,
+	        NVL(SUM(CASE WHEN MONTH(cashbook_date)=9 THEN cashbook_price END),0) september,
+	        NVL(SUM(CASE WHEN MONTH(cashbook_date)=10 THEN cashbook_price END),0) october,
+	        NVL(SUM(CASE WHEN MONTH(cashbook_date)=11 THEN cashbook_price END),0) november,
+	        NVL(SUM(CASE WHEN MONTH(cashbook_date)=12 THEN cashbook_price END),0) december
+      FROM cashbook
+      WHERE YEAR(cashbook_date) = #{year}
+      AND cashbook.cashbook_kind = '수입';
+	</select>
+	
+	<select id="selectYearChartToOut" parameterType="Integer" resultType="java.util.Map">
+		SELECT
+	        NVL(SUM(CASE WHEN MONTH(cashbook_date)=1 THEN cashbook_price END),0) january,
+	        NVL(SUM(CASE WHEN MONTH(cashbook_date)=2 THEN cashbook_price END),0) february,
+	        NVL(SUM(CASE WHEN MONTH(cashbook_date)=3 THEN cashbook_price END),0) march,
+	        NVL(SUM(CASE WHEN MONTH(cashbook_date)=4 THEN cashbook_price END),0) april,
+	        NVL(SUM(CASE WHEN MONTH(cashbook_date)=5 THEN cashbook_price END),0) may,
+	        NVL(SUM(CASE WHEN MONTH(cashbook_date)=6 THEN cashbook_price END),0) june,
+	        NVL(SUM(CASE WHEN MONTH(cashbook_date)=7 THEN cashbook_price END),0) july,
+	        NVL(SUM(CASE WHEN MONTH(cashbook_date)=8 THEN cashbook_price END),0) august,
+	        NVL(SUM(CASE WHEN MONTH(cashbook_date)=9 THEN cashbook_price END),0) september,
+	        NVL(SUM(CASE WHEN MONTH(cashbook_date)=10 THEN cashbook_price END),0) october,
+	        NVL(SUM(CASE WHEN MONTH(cashbook_date)=11 THEN cashbook_price END),0) november,
+	        NVL(SUM(CASE WHEN MONTH(cashbook_date)=12 THEN cashbook_price END),0) december
+      FROM cashbook
+      WHERE YEAR(cashbook_date) = #{year}
+      AND cashbook.cashbook_kind = '지출';
+	</select>
+</mapper>

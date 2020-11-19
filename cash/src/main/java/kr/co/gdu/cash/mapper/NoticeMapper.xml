@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.gdu.cash.mapper.NoticeMapper">
+	<delete id="deleteNoticeList" parameterType="Integer">
+		DELETE FROM notice
+		WHERE notice_id = #{noticeId}
+	</delete>
+
+	<update id="updateNoticeList" parameterType="kr.co.gdu.cash.vo.Notice">
+		UPDATE notice
+		SET notice_title = #{noticeTitle}, notice_content = #{noticeContent}, notice_date = NOW()
+		WHERE notice_id = ${noticeId}
+	</update>
+
+	<insert id="insertNoticeList" parameterType="kr.co.gdu.cash.vo.Notice">
+		INSERT INTO notice(notice_title, notice_content, notice_date)
+		VALUES(#{noticeTitle},#{noticeContent},NOW())
+	</insert>
+
+	<select id="selectNoticeOneList" parameterType="Integer" resultType="kr.co.gdu.cash.vo.Notice">
+		SELECT
+			notice_id noticeId,
+			notice_title noticeTitle,
+			notice_content noticeContent,
+			notice_date noticeDate
+		FROM notice
+		WHERE notice_id = #{noticeId}
+	</select>
+
+	<select id="selectLatestNoiceList" resultType="kr.co.gdu.cash.vo.Notice">
+		SELECT 
+			notice_id noticeId,
+			notice_title noticeTitle
+		FROM notice
+		ORDER BY notice_date DESC
+		LIMIT 0, 5
+	</select>
+	
+	<select id="selectNoticeListByPage" parameterType="java.util.Map" resultType="kr.co.gdu.cash.vo.Notice">
+		SELECT
+			notice_id noticeId,
+			notice_title noticeTitle,
+			notice_date noticeDate
+		FROM notice
+		ORDER BY notice_date DESC
+		LIMIT #{beginRow}, #{rowPerPage}
+	</select>
+	
+	<select id="selectNoticeCount" resultType="Integer">
+		SELECT
+			COUNT(*) cnt
+		FROM notice
+	</select>
+</mapper>
