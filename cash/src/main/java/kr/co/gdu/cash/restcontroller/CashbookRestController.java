@@ -18,6 +18,24 @@ import kr.co.gdu.cash.vo.Cashbook;
 public class CashbookRestController {
 	@Autowired CashbookRestService cashbookRestService;
 	
+	@GetMapping("/admin/cashbookRecentChartToIn")
+	public List<Cashbook> cashbookRecentChartToIn(){
+		return cashbookRestService.getRecentChartToIn();
+	}
+	@GetMapping("/admin/cashbookRecentChartToOut")
+	public List<Cashbook> cashbookRecentChartToOut(){
+		return cashbookRestService.getRecentChartToOut();
+	}
+	
+	@GetMapping("/admin/cashbookOldChartToIn")
+	public List<Cashbook> cashbookOldChartToIn(){
+		return cashbookRestService.getOldChartToIn();
+	}
+	@GetMapping("/admin/cashbookOldChartToOut")
+	public List<Cashbook> cashbookOldChartToOut(){
+		return cashbookRestService.getOldChartToOut();
+	}
+	
 	@GetMapping("/admin/cashbookInChart/{year}")
 	public Map<String, Object> yearChartToIn(@PathVariable(name="year") int year){
 		return cashbookRestService.getYearChartToIn(year);
@@ -26,6 +44,16 @@ public class CashbookRestController {
 	@GetMapping("/admin/cashbookOutChart/{year}")
 	public Map<String, Object> yearChartToOut(@PathVariable(name="year") int year){
 		return cashbookRestService.getYearChartToOut(year);
+	}
+	
+	@GetMapping("/admin/cashbookAverageYearInChart/{year}")
+	public Map<String, Object> cashbookAverageYearInChart(@PathVariable(name="year") int year){
+		return cashbookRestService.getAverageYearChartToIn(year);
+	}
+	
+	@GetMapping("/admin/cashbookAverageYearOutChart/{year}")
+	public Map<String, Object> cashbookAverageYearOutChart(@PathVariable(name="year") int year){
+		return cashbookRestService.getAverageYearChartToOut(year);
 	}
 	
 	@GetMapping("/admin/cashbookTopMonthInChart/{year}/{month}")

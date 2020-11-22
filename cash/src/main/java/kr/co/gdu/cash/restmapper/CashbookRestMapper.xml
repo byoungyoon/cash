@@ -35,6 +35,76 @@
 		ORDER BY SUM(cashbook_price) DESC
 	</select>
 	
+	<select id="selectRecentChartToIn" resultType="kr.co.gdu.cash.vo.Cashbook">
+		SELECT cashbook_price cashbookPrice, cashbook_date cashbookDate
+		FROM cashbook
+		WHERE cashbook_kind = '수입'
+		ORDER BY cashbook_date DESC, cashbook_price DESC
+		LIMIT 0, 5
+	</select>
+	
+	<select id="selectRecentChartToOut" resultType="kr.co.gdu.cash.vo.Cashbook">
+		SELECT cashbook_price cashbookPrice, cashbook_date cashbookDate
+		FROM cashbook
+		WHERE cashbook_kind = '지출'
+		ORDER BY cashbook_date DESC, cashbook_price DESC
+		LIMIT 0, 5
+	</select>
+	
+	<select id="selectOldChartToIn" resultType="kr.co.gdu.cash.vo.Cashbook">
+		SELECT cashbook_price cashbookPrice, cashbook_date cashbookDate
+		FROM cashbook
+		WHERE cashbook_kind = '수입'
+		ORDER BY cashbook_date, cashbook_price DESC
+		LIMIT 0, 5
+	</select>
+	
+	<select id="selectOldChartToOut" resultType="kr.co.gdu.cash.vo.Cashbook">
+		SELECT cashbook_price cashbookPrice, cashbook_date cashbookDate
+		FROM cashbook
+		WHERE cashbook_kind = '지출'
+		ORDER BY cashbook_date, cashbook_price DESC
+		LIMIT 0, 5
+	</select>
+	
+	<select id="selectAverageYearChartToIn" parameterType="Integer" resultType="java.util.Map">
+		SELECT
+	        NVL(AVG(CASE WHEN MONTH(cashbook_date)=1 THEN cashbook_price END),0) january,
+	        NVL(AVG(CASE WHEN MONTH(cashbook_date)=2 THEN cashbook_price END),0) february,
+	        NVL(AVG(CASE WHEN MONTH(cashbook_date)=3 THEN cashbook_price END),0) march,
+	        NVL(AVG(CASE WHEN MONTH(cashbook_date)=4 THEN cashbook_price END),0) april,
+	        NVL(AVG(CASE WHEN MONTH(cashbook_date)=5 THEN cashbook_price END),0) may,
+	        NVL(AVG(CASE WHEN MONTH(cashbook_date)=6 THEN cashbook_price END),0) june,
+	        NVL(AVG(CASE WHEN MONTH(cashbook_date)=7 THEN cashbook_price END),0) july,
+	        NVL(AVG(CASE WHEN MONTH(cashbook_date)=8 THEN cashbook_price END),0) august,
+	        NVL(AVG(CASE WHEN MONTH(cashbook_date)=9 THEN cashbook_price END),0) september,
+	        NVL(AVG(CASE WHEN MONTH(cashbook_date)=10 THEN cashbook_price END),0) october,
+	        NVL(AVG(CASE WHEN MONTH(cashbook_date)=11 THEN cashbook_price END),0) november,
+	        NVL(AVG(CASE WHEN MONTH(cashbook_date)=12 THEN cashbook_price END),0) december
+      FROM cashbook
+      WHERE YEAR(cashbook_date) = #{year}
+      AND cashbook.cashbook_kind = '수입';
+	</select>
+	
+	<select id="selectAverageYearChartToOut" parameterType="Integer" resultType="java.util.Map">
+		SELECT
+	        NVL(AVG(CASE WHEN MONTH(cashbook_date)=1 THEN cashbook_price END),0) january,
+	        NVL(AVG(CASE WHEN MONTH(cashbook_date)=2 THEN cashbook_price END),0) february,
+	        NVL(AVG(CASE WHEN MONTH(cashbook_date)=3 THEN cashbook_price END),0) march,
+	        NVL(AVG(CASE WHEN MONTH(cashbook_date)=4 THEN cashbook_price END),0) april,
+	        NVL(AVG(CASE WHEN MONTH(cashbook_date)=5 THEN cashbook_price END),0) may,
+	        NVL(AVG(CASE WHEN MONTH(cashbook_date)=6 THEN cashbook_price END),0) june,
+	        NVL(AVG(CASE WHEN MONTH(cashbook_date)=7 THEN cashbook_price END),0) july,
+	        NVL(AVG(CASE WHEN MONTH(cashbook_date)=8 THEN cashbook_price END),0) august,
+	        NVL(AVG(CASE WHEN MONTH(cashbook_date)=9 THEN cashbook_price END),0) september,
+	        NVL(AVG(CASE WHEN MONTH(cashbook_date)=10 THEN cashbook_price END),0) october,
+	        NVL(AVG(CASE WHEN MONTH(cashbook_date)=11 THEN cashbook_price END),0) november,
+	        NVL(AVG(CASE WHEN MONTH(cashbook_date)=12 THEN cashbook_price END),0) december
+      FROM cashbook
+      WHERE YEAR(cashbook_date) = #{year}
+      AND cashbook.cashbook_kind = '지출';
+	</select>
+	
 	<select id="selectYearChartToIn" parameterType="Integer" resultType="java.util.Map">
 		SELECT
 	        NVL(SUM(CASE WHEN MONTH(cashbook_date)=1 THEN cashbook_price END),0) january,

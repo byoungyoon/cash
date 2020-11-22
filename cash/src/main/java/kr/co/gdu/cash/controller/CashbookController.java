@@ -178,7 +178,7 @@ public class CashbookController {
 	}
 	
 	@GetMapping(value="/admin/cashbookYearChart")
-	public String cashbookChart(Model model,
+	public String cashbookYearChart(Model model,
 			@RequestParam(name = "currentYear", defaultValue = "-1") int currentYear) { 
 
 		Calendar currentDay = Calendar.getInstance(); 
@@ -191,7 +191,24 @@ public class CashbookController {
 
 		model.addAttribute("currentYear", currentYear); 
 
-		return "cashbookYearChart";
+		return "/chart/cashbookYearChart";
+	}
+	
+	@GetMapping(value="/admin/cashbookAverageYearChart")
+	public String cashbookAverageYearChart(Model model,
+			@RequestParam(name = "currentYear", defaultValue = "-1") int currentYear) { 
+		
+		Calendar currentDay = Calendar.getInstance(); 
+		if(currentYear != -1) {
+			currentDay.set(Calendar.YEAR, currentYear);
+		}
+		currentDay.set(Calendar.DATE, 1);
+		
+		currentYear = currentDay.get(Calendar.YEAR);
+		
+		model.addAttribute("currentYear", currentYear); 
+		
+		return "/chart/cashbookAverageYearChart";
 	}
 	
 	@GetMapping(value="/admin/cashbookTopMonthChart")
@@ -221,7 +238,7 @@ public class CashbookController {
 		model.addAttribute("currentYear", currentYear); 
 		model.addAttribute("currentMonth", currentMonth); 
 
-		return "cashbookTopMonthChart";
+		return "/chart/cashbookTopMonthChart";
 	}
 	
 	@GetMapping(value="/admin/cashbookLowerMonthChart")
@@ -251,6 +268,16 @@ public class CashbookController {
 		model.addAttribute("currentYear", currentYear); 
 		model.addAttribute("currentMonth", currentMonth); 
 
-		return "cashbookLowerMonthChart";
+		return "/chart/cashbookLowerMonthChart";
+	}
+	
+	@GetMapping(value="/admin/cashbookRecentChart")
+	public String cashbookRecentChart() {
+		return "/chart/cashbookRecentChart";
+	}
+	
+	@GetMapping(value="/admin/cashbookOldChart")
+	public String cashbookOldChart() {
+		return "/chart/cashbookOldChart";
 	}
 }

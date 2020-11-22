@@ -19,14 +19,36 @@ import kr.co.gdu.cash.vo.Cashbook;
 public class CashbookRestService {
 	@Autowired CashbookRestMapper cashbookRestMapper;
 	
+	public List<Cashbook> getRecentChartToIn(){
+		return cashbookRestMapper.selectRecentChartToIn();
+	}
+	
+	public List<Cashbook> getRecentChartToOut(){
+		return cashbookRestMapper.selectRecentChartToOut();
+	}
+	
+	public List<Cashbook> getOldChartToIn(){
+		return cashbookRestMapper.selectOldChartToIn();
+	}
+	
+	public List<Cashbook> getOldChartToOut(){
+		return cashbookRestMapper.selectOldChartToIn();
+	}
 
 	public Map<String, Object> getYearChartToIn(int year){
 		return cashbookRestMapper.selectYearChartToIn(year);
-	}
-	
+	}	
 
 	public Map<String, Object> getYearChartToOut(int year){
 		return cashbookRestMapper.selectYearChartToOut(year);
+	}
+	
+	public Map<String, Object> getAverageYearChartToIn(int year){
+		return cashbookRestMapper.selectAverageYearChartToIn(year);
+	}	
+	
+	public Map<String, Object> getAverageYearChartToOut(int year){
+		return cashbookRestMapper.selectAverageYearChartToOut(year);
 	}
 	
 	public List<Cashbook> getTopMonthChartToIn(int year, int month){
