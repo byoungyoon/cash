@@ -18,10 +18,10 @@
 			<div id="box1" class="post">
 				<h2 class="title" id="center"><a>${currentYear}-${currentMonth}-${currentDay}</a></h2>
 				<div id="btnStyle2">
-					<a href="/admin/cashbookByDay/pre/${currentYear}/${currentMonth}/${currentDay}"><i class='fas fa-angle-double-left' style='font-size:24px'></i></a>
+					<a href="${path}/admin/cashbookByDay/pre/${currentYear}/${currentMonth}/${currentDay}"><i class='fas fa-angle-double-left' style='font-size:24px'></i></a>
 				</div>
 				<div id="btnStyle">
-					<a href="/admin/cashbookByDay/next/${currentYear}/${currentMonth}/${currentDay}"><i class='fas fa-angle-double-right' style='font-size:24px'></i></a>
+					<a href="${path}/admin/cashbookByDay/next/${currentYear}/${currentMonth}/${currentDay}"><i class='fas fa-angle-double-right' style='font-size:24px'></i></a>
 				</div>
 
 				<table id="fullListTable">
@@ -38,7 +38,7 @@
 					<tbody>
 						<c:forEach var="c" items="${cashbookList}">
 							<tr>								
-								<td><a href="/admin/cashbookOneList/${c.cashbookId}">${c.cashbookId}</a></td>
+								<td><a href="${path}/admin/cashbookOneList/${c.cashbookId}">${c.cashbookId}</a></td>
 								<td>${c.cashbookKind}</td>
 								<td>${c.categoryName}</td>
 								<td>${c.cashbookPrice}</td>
@@ -48,8 +48,8 @@
 					</tbody>
 				</table>
 				<div id="btnStyle">
-					<a href="/admin/addCashbook?currentYear=${currentYear}&currentMonth=${currentMonth}&currentDay=${currentDay}">추가</a>
-					<a href="/admin/cashbookByMonth?currentYear=${currentYear}&currentMonth=${currentMonth}">돌아가기</a>
+					<a href="${path}/admin/addCashbook?currentYear=${currentYear}&currentMonth=${currentMonth}&currentDay=${currentDay}">추가</a>
+					<a href="${path}}/admin/cashbookByMonth?currentYear=${currentYear}&currentMonth=${currentMonth}">돌아가기</a>
 				</div>
 			</div>
 		</div>

@@ -37,8 +37,8 @@
 				</table>
 				
 				<div id="btnStyle">
-					<a href="/admin/updateNoticeList/${notice.noticeId}">수정</a>
-					<a href="/admin/deleteNoticeList/${notice.noticeId}">삭제</a>
+					<a href="${path}/admin/updateNoticeList/${notice.noticeId}">수정</a>
+					<a href="${path}/admin/deleteNoticeList/${notice.noticeId}">삭제</a>
 				</div>
 			</div>
 

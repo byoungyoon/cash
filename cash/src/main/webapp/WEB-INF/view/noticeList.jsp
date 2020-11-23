@@ -18,7 +18,7 @@
 				<h2 class="title"><a>notice List</a></h2>
 				
 				<div id="btnStyle">
-					<a href="/admin/addNoticeList">공지 추가</a>
+					<a href="${path}/admin/addNoticeList">공지 추가</a>
 				</div>
 				
 				<table id="fullListTable">
@@ -33,7 +33,7 @@
 					<tbody>
 						<c:forEach var="n" items="${noticeList}">
 							<tr>
-								<td><a href="/admin/noticeOneList/${n.noticeId}">${n.noticeId}</a></td>
+								<td><a href="${path}/admin/noticeOneList/${n.noticeId}">${n.noticeId}</a></td>
 								<td>${n.noticeTitle}</td>
 								<td>${n.noticeDate}</td>								
 							</tr>
@@ -42,24 +42,24 @@
 				</table>
 				
 				<div id="paging">	
-					<a href="/admin/noticeList?currentPage=${1}">1</a>
+					<a href="${path}/admin/noticeList?currentPage=${1}">1</a>
 					<a>...</a>
 					<c:choose>
 						<c:when test="${lastPage < 4 }">
 							<c:forEach var="i" begin="${1}" end="${lastPage}">
 								<c:choose>
 									<c:when test="${i eq currentPage}">
-										<a class="currentPage" href="/admin/noticeList?currentPage=${i}">${i}</a>	
+										<a class="currentPage" href="${path}/admin/noticeList?currentPage=${i}">${i}</a>	
 									</c:when>
 									<c:otherwise>
-										<a href="/admin/noticeList?currentPage=${i}">${i}</a>	
+										<a href="${path}/admin/noticeList?currentPage=${i}">${i}</a>	
 									</c:otherwise>
 								</c:choose>
 							</c:forEach>
 						</c:when>
 					</c:choose>
 					<a>...</a>
-					<a href="/admin/noticeList?currentPage=${lastPage}">end</a>		
+					<a href="${path}/admin/noticeList?currentPage=${lastPage}">end</a>		
 				</div>
 			</div>
 

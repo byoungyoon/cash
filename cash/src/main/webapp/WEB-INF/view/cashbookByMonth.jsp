@@ -18,10 +18,10 @@
 			<div id="box1" class="post">
 			<h2 class="title" id="center"><a>${currentYear}-${currentMonth}</a></h2>
 			<div id="btnStyle2">
-				<a href="/admin/cashbookByMonth?currentYear=${currentYear}&currentMonth=${currentMonth-1}"><i class='fas fa-angle-double-left' style='font-size:24px'></i></a>
+				<a href="${path}/admin/cashbookByMonth?currentYear=${currentYear}&currentMonth=${currentMonth-1}"><i class='fas fa-angle-double-left' style='font-size:24px'></i></a>
 			</div>
 			<div id="btnStyle">
-				<a href="/admin/cashbookByMonth?currentYear=${currentYear}&currentMonth=${currentMonth+1}"><i class='fas fa-angle-double-right' style='font-size:24px'></i></a>
+				<a href="${path}/admin/cashbookByMonth?currentYear=${currentYear}&currentMonth=${currentMonth+1}"><i class='fas fa-angle-double-right' style='font-size:24px'></i></a>
 			</div>
 				<table id="cashbookTable">
 					<thead>
@@ -44,7 +44,7 @@
 								<c:if test="${i-(firstDayOfWeek-1) > 0}">
 									<td>
 										<div><!-- 날짜 -->
-											<a href="/admin/cashbookByDay/now/${currentYear}/${currentMonth}/${i-(firstDayOfWeek-1)}">
+											<a href="${path}/admin/cashbookByDay/now/${currentYear}/${currentMonth}/${i-(firstDayOfWeek-1)}">
 												${i-(firstDayOfWeek-1)}
 											</a>
 										</div>

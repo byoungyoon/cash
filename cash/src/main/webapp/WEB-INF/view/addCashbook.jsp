@@ -17,7 +17,7 @@
 			<div id="box1" class="post">
 				<h2 class="title" id="center"><a>${currentYear}-${currentMonth}-${currentDay}</a></h2>
 				
-				<form method="post" action="/admin/addCashbook?currentYear=${currentYear}&currentMonth=${currentMonth}&currentDay=${currentDay}">
+				<form method="post" action="${path}/admin/addCashbook?currentYear=${currentYear}&currentMonth=${currentMonth}&currentDay=${currentDay}">
 					<table id="oneListTable">
 						<tr>	
 							<th>cashbook_kind</th>

@@ -6,12 +6,12 @@
 			</div>
 			<div id="menu" class="box">
 				<ul>
-					<li><a href="/admin/index" accesskey="1" title="">index</a></li>
-					<li><a href="/admin/cashbookByMonth" accesskey="2" title="">account book</a></li>
-					<li><a href="/admin/noticeList" accesskey="3" title="">Notice</a></li>
-					<li><a href="/admin/cashbookList/${1}" accesskey="3" title="">Cashbook</a></li>
-					<li><a href="/admin/cashbookYearChart" accesskey="4" title="">CashbookChart</a></li>
-					<li><a href="/admin/logout" accesskey="5" title="">logout</a></li>
+					<li><a href="${pageContext.request.contextPath}/admin/index" accesskey="1" title="">index</a></li>
+					<li><a href="${pageContext.request.contextPath}/admin/cashbookByMonth" accesskey="2" title="">account book</a></li>
+					<li><a href="${pageContext.request.contextPath}/admin/noticeList" accesskey="3" title="">Notice</a></li>
+					<li><a href="${pageContext.request.contextPath}/admin/cashbookList/${1}" accesskey="3" title="">Cashbook</a></li>
+					<li><a href="${pageContext.request.contextPath}/admin/cashbookYearChart" accesskey="4" title="">CashbookChart</a></li>
+					<li><a href="${pageContext.request.contextPath}/admin/logout" accesskey="5" title="">logout</a></li>
 				</ul>
 			</div>
 		</div>

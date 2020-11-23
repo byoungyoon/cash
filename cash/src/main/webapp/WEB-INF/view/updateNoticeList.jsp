@@ -17,7 +17,7 @@
 			<div id="box1" class="post">
 				<h2 class="title"><a>notice List</a></h2>
 				
-				<form method="post" action="/admin/updateNoticeList">
+				<form method="post" action="${path}/admin/updateNoticeList">
 					<table id="oneListTable">
 						<tr>
 							<th>notice_id</th>

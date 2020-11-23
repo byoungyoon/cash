@@ -17,7 +17,7 @@
 			<div id="box1" class="post">
 				<h2 class="title"><a>cashbook List</a></h2>
 				
-				<form method="post" action="/admin/updateCashbookList">
+				<form method="post" action="${path}/admin/updateCashbookList">
 					<table id="oneListTable">
 						<tr>	
 							<th>cashbook_id</th>
@@ -76,7 +76,7 @@
 					
 					<div id="btnStyle">
 						<button type="submit">수정</button>
-						<a href="/admin/deleteCashbookList/${cashbook.cashbookId}">삭제</a>
+						<a href="${path}/admin/deleteCashbookList/${cashbook.cashbookId}">삭제</a>
 					</div>
 				</form>
 			</div>

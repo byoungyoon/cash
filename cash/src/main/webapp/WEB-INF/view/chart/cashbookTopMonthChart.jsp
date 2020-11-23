@@ -21,10 +21,10 @@
 				<jsp:include page="/WEB-INF/view/inc/chartMenu.jsp"></jsp:include>
 			    
 				<div id="btnStyle2">
-					<a href="/admin/cashbookTopMonthChart?currentYear=${currentYear}&currentMonth=${currentMonth - 1}"><i class='fas fa-angle-double-left' style='font-size:24px'></i></a>
+					<a href="${path}/admin/cashbookTopMonthChart?currentYear=${currentYear}&currentMonth=${currentMonth - 1}"><i class='fas fa-angle-double-left' style='font-size:24px'></i></a>
 				</div>
 				<div id="btnStyle">
-					<a href="/admin/cashbookTopMonthChart?currentYear=${currentYear}&currentMonth=${currentMonth + 1}"><i class='fas fa-angle-double-right' style='font-size:24px'></i></a>
+					<a href="${path}/admin/cashbookTopMonthChart?currentYear=${currentYear}&currentMonth=${currentMonth + 1}"><i class='fas fa-angle-double-right' style='font-size:24px'></i></a>
 				</div>
 				<canvas id="inChart"></canvas>
 				
@@ -49,7 +49,7 @@
 
 $('#openTable').click(function(){
 	$.ajax({
-		url: '/admin/cashbookTopMonthInChart/' + ${currentYear} + "/" + ${currentMonth},
+		url: '${path}/admin/cashbookTopMonthInChart/' + ${currentYear} + "/" + ${currentMonth},
 		type: 'GET',
 		success: function(data){
 			let html = `
@@ -75,7 +75,7 @@ $('#openTable').click(function(){
 	});
 
 	$.ajax({
-		url: '/admin/cashbookTopMonthOutChart/' + ${currentYear} + "/" + ${currentMonth},
+		url: '${path}/admin/cashbookTopMonthOutChart/' + ${currentYear} + "/" + ${currentMonth},
 		type: 'GET',
 		success: function(data){
 			let html = `
@@ -103,7 +103,7 @@ $('#openTable').click(function(){
 
 $('#closeTable').click(function(){
 	$.ajax({
-		url: '/admin/cashbookTopMonthInChart/' + ${currentYear} + "/" + ${currentMonth},
+		url: '${path}/admin/cashbookTopMonthInChart/' + ${currentYear} + "/" + ${currentMonth},
 		type: 'GET',
 		success: function(data){
 			$('#inTable').empty();
@@ -113,7 +113,7 @@ $('#closeTable').click(function(){
 });
 
 $.ajax({
-	url: '/admin/cashbookTopMonthInChart/' + ${currentYear} + "/" + ${currentMonth}, 
+	url: '${path}/admin/cashbookTopMonthInChart/' + ${currentYear} + "/" + ${currentMonth}, 
 	type: 'GET',
 	success: function(data){
 		var ctx = document.getElementById('inChart').getContext('2d');
@@ -139,7 +139,7 @@ $.ajax({
 });
 
 $.ajax({
-	url: '/admin/cashbookTopMonthOutChart/' + ${currentYear} + "/" + ${currentMonth}, 
+	url: '${path}/admin/cashbookTopMonthOutChart/' + ${currentYear} + "/" + ${currentMonth}, 
 	type: 'GET',
 	success: function(data){
 		var ctx = document.getElementById('outChart').getContext('2d');

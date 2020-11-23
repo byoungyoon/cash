@@ -42,7 +42,7 @@
 <script>
 	$('#openTable').click(function(){	
 		$.ajax({
-			url: '/admin/cashbookRecentChartToIn',
+			url: '${path}/admin/cashbookRecentChartToIn',
 			type: 'GET',
 			success: function(data){
 				let html = `
@@ -72,7 +72,7 @@
 		});
 
 		$.ajax({
-			url: '/admin/cashbookRecentChartToOut',
+			url: '${path}/admin/cashbookRecentChartToOut',
 			type: 'GET',
 			success: function(data){
 				let html = `
@@ -104,7 +104,7 @@
 
 	$('#closeTable').click(function(){
 		$.ajax({
-			url: '/admin/cashbookRecentChartToIn',
+			url: '${path}/admin/cashbookRecentChartToIn',
 			type: 'GET',
 			success: function(data){
 				$('#inTable').empty();
@@ -114,7 +114,7 @@
 	});
 	
 	$.ajax({
-		url: '/admin/cashbookRecentChartToIn',
+		url: '${path}/admin/cashbookRecentChartToIn',
 		type: 'GET',
 		success: function(data){
 			var ctx = document.getElementById('inChart').getContext('2d');
@@ -136,7 +136,7 @@
 	});
 	
 	$.ajax({
-		url: '/admin/cashbookRecentChartToOut',
+		url: '${path}/admin/cashbookRecentChartToOut',
 		type: 'GET',
 		success: function(data){
 			var ctx = document.getElementById('outChart').getContext('2d');

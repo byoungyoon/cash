@@ -21,10 +21,10 @@
 				<jsp:include page="/WEB-INF/view/inc/chartMenu.jsp"></jsp:include>
 			    
 				<div id="btnStyle2">
-					<a href="/admin/cashbookYearChart?currentYear=${currentYear-1}"><i class='fas fa-angle-double-left' style='font-size:24px'></i></a>
+					<a href="${path}/admin/cashbookYearChart?currentYear=${currentYear-1}"><i class='fas fa-angle-double-left' style='font-size:24px'></i></a>
 				</div>
 				<div id="btnStyle">
-					<a href="/admin/cashbookYearChart?currentYear=${currentYear+1}"><i class='fas fa-angle-double-right' style='font-size:24px'></i></a>
+					<a href="${path}/admin/cashbookYearChart?currentYear=${currentYear+1}"><i class='fas fa-angle-double-right' style='font-size:24px'></i></a>
 				</div>
 				<canvas id="inChart"></canvas>
 				
@@ -48,7 +48,7 @@
 <script>
 	$('#openTable').click(function(){	
 		$.ajax({
-			url: '/admin/cashbookInChart/' + ${currentYear},
+			url: '${path}/admin/cashbookInChart/' + ${currentYear},
 			type: 'GET',
 			success: function(data){
 				let html = `
@@ -103,7 +103,7 @@
 		});
 
 		$.ajax({
-			url: '/admin/cashbookOutChart/' + ${currentYear},
+			url: '${path}/admin/cashbookOutChart/' + ${currentYear},
 			type: 'GET',
 			success: function(data){
 				let html = `
@@ -160,7 +160,7 @@
 
 	$('#closeTable').click(function(){
 		$.ajax({
-			url: '/admin/cashbookInChart/' + ${currentYear},
+			url: '${path}/admin/cashbookInChart/' + ${currentYear},
 			type: 'GET',
 			success: function(data){
 				$('#inTable').empty();
@@ -170,7 +170,7 @@
 	});
 	
 	$.ajax({
-		url: '/admin/cashbookInChart/' + ${currentYear},
+		url: '${path}/admin/cashbookInChart/' + ${currentYear},
 		type: 'GET',
 		success: function(data){
 			var ctx = document.getElementById('inChart').getContext('2d');
@@ -197,7 +197,7 @@
 			});
 	
 	$.ajax({
-		url: '/admin/cashbookOutChart/' + ${currentYear},
+		url: '${path}/admin/cashbookOutChart/' + ${currentYear},
 		type: 'GET',
 		success: function(data){
 			var ctx = document.getElementById('outChart').getContext('2d');

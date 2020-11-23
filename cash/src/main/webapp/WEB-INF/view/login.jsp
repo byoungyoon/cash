@@ -17,7 +17,7 @@
 			<div id="box1" class="post">
 				<h2 class="title" id="center"><a>Login</a></h2>
 			
-				<form action="/login" method="post">
+				<form action="${path}/login" method="post">
 					<table id="oneListTable">
 						<tr>
 							<th>ID</th>

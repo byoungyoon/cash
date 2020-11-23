@@ -16,7 +16,7 @@
 		<div id="content"><a class="image-style" href="#"><img src="https://ifh.cc/g/zFOXWZ.jpg" width="725" height="300" alt="" /></a>
 			<div id="box1" class="post">
 				<h2 class="title"><a>add notice List</a></h2>
-				<form method="post" action="/admin/addNoticeList">
+				<form method="post" action="${path}/admin/addNoticeList">
 					<table id="oneListTable">
 						<tr>
 							<th>notice_title</th>

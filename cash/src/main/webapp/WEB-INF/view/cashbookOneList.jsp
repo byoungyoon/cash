@@ -53,8 +53,8 @@
 				</table>
 				
 				<div id="btnStyle">
-					<a href="/admin/updateCashbookList/${cashbook.cashbookId}">수정</a>
-					<a href="/admin/deleteCashbookList/${cashbook.cashbookId}">삭제</a>
+					<a href="${path}/admin/updateCashbookList/${cashbook.cashbookId}">수정</a>
+					<a href="${path}/admin/deleteCashbookList/${cashbook.cashbookId}">삭제</a>
 				</div>
 			</div>
 
