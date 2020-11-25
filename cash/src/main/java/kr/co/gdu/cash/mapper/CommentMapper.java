@@ -11,5 +11,6 @@ public interface CommentMapper {
 	int insertCommentList(Comment comment);
 	List<Comment> selectCommentList(int noticeId);
 	int deleteCommentList(int commentId);
+	int deleteCommentListByNotice(int noticeId);
 	int selectCommentListCount(int noticeId);
 }

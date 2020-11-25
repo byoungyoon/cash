@@ -68,6 +68,7 @@ public class NoticeController {
 	// 공지 삭제
 	@GetMapping("/admin/deleteNoticeList/{noticeId}")
 	public String deleteNoticeList(@PathVariable(name = "noticeId") int noticeId) {
+		commentService.getDeleteCommentListByNotice(noticeId);
 		noticeService.getDeleteNoticeList(noticeId);
 		return "redirect:/admin/noticeList";
 	}

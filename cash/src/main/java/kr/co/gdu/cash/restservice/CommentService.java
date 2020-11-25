@@ -29,4 +29,8 @@ public class CommentService {
 	public int getCommentListCount(int noticeId) {
 		return commentMapper.selectCommentListCount(noticeId);
 	}
+	
+	public void getDeleteCommentListByNotice(int noticeId) {
+		commentMapper.deleteCommentListByNotice(noticeId);
+	}
 }
