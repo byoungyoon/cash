@@ -424,7 +424,6 @@ hr
 
 #content #commentListTable{
 	width: 100%;
-
 }
 
 #content #commentListTable th{
@@ -467,6 +466,26 @@ hr
 	background-color:#e9e9e9;
 }
 
+#content #guestbookListTable{
+	width: 100%;
+	border: 3px solid #dcdcdc;
+	border-radius:10px;
+	margin: 15px 0px 5px 0px;
+}
+
+#content #guestbookListTable th{
+	text-align:left;
+	padding: 15px;
+    font-weight: bold;
+    vertical-align: middle;
+    color: #000000;
+}
+
+#content #guestbookListTable td{
+	height: 100px;
+	padding:15px;
+}
+
 #content #cashStyle{
 	padding:15px;
 	text-align:right;
@@ -501,6 +520,12 @@ hr
 	font-size:20px;
 	color: #000000;
 	padding: 15px;
+}
+
+#content #guestbookDate{
+    text-align:right;
+    font-size:16px;
+    margin: 0px 0px 5px 0px;
 }
 
 #box2 
