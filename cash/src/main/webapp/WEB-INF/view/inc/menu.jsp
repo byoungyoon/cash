@@ -11,7 +11,8 @@
 					<li><a href="${pageContext.request.contextPath}/admin/noticeList" accesskey="3" title="">Notice</a></li>
 					<li><a href="${pageContext.request.contextPath}/admin/cashbookList/${1}" accesskey="3" title="">Cashbook</a></li>
 					<li><a href="${pageContext.request.contextPath}/admin/cashbookYearChart" accesskey="4" title="">CashbookChart</a></li>
-					<li><a href="${pageContext.request.contextPath}/admin/logout" accesskey="5" title="">logout</a></li>
+					<li><a href="${pageContext.request.contextPath}/admin/guestbookList/${1}" accesskey="5" title="">guest book</a></li>
+					<li><a href="${pageContext.request.contextPath}/admin/logout" accesskey="6" title="">logout</a></li>
 				</ul>
 			</div>
 		</div>

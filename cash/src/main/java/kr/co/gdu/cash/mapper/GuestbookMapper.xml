@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.gdu.cash.mapper.GuestbookMapper">
+	<select id="selectGuestbookList" parameterType="java.util.Map" resultType="kr.co.gdu.cash.vo.Guestbook">
+		SELECT
+			guestbook_name guestbookName,
+			guestbook_title guestbookTitle,
+			guestbook_content guestbookContent,
+			guestbook_date guestbookDate
+		FROM guestbook
+		ORDER BY guestbook_date DESC
+		LIMIT #{currentPage}, #{limitPage}
+	</select>
+	
+	<select id="selectGuestbookListCount" resultType="Integer">
+		SELECT COUNT(*)
+		FROM guestbook
+	</select>
+	
+	<insert id="insertGuestbookList" parameterType="kr.co.gdu.cash.vo.Guestbook">
+		INSERT INTO guestbook(guestbook_name, guestbook_title, guestbook_content, guestbook_date)
+		VALUES(#{guestbookName}, #{guestbookTitle}, #{guestbookContent}, NOW())
+	</insert>
+</mapper>
