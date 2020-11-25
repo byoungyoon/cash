@@ -8,7 +8,7 @@
 	<meta name="keywords" content="" />
 	<meta name="description" content="" />
 	<link href='http://fonts.googleapis.com/css?family=Satisfy|Fjalla+One|Open+Sans:400,600,700' rel='stylesheet' type='text/css' />
-	<link href="${path}/resources/default.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="${path}/resources/default.css?ver=1" rel="stylesheet" type="text/css" media="all" />
 </head>
 <body>
 <div id="wrapper">
