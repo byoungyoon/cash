@@ -15,7 +15,7 @@
 	<div id="page" class="container">
 		<div id="content"><a class="image-style" href="#"><img src="https://ifh.cc/g/zFOXWZ.jpg" width="725" height="300" alt="" /></a>
 			<div id="box1" class="post">
-				<h2 class="title"><a>guestbook List</a></h2>
+				<h2 class="title"><a>add guestbook</a></h2>
 				<form method="post" action="${path}/admin/addGuestbookList">
 					<table id="oneListTable">
 						<tr>

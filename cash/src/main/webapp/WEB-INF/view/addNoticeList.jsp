@@ -15,7 +15,7 @@
 	<div id="page" class="container">
 		<div id="content"><a class="image-style" href="#"><img src="https://ifh.cc/g/zFOXWZ.jpg" width="725" height="300" alt="" /></a>
 			<div id="box1" class="post">
-				<h2 class="title"><a>add notice List</a></h2>
+				<h2 class="title"><a>add notice</a></h2>
 				<form method="post" action="${path}/admin/addNoticeList">
 					<table id="oneListTable">
 						<tr>
@@ -28,7 +28,7 @@
 						</tr>
 						<tr>
 							<th>Attachments</th>
-							<td><input type="file" name=""></td>
+							<td><input type="file" name="noticefile"></td>
 						</tr>
 					</table>
 					

@@ -49,7 +49,7 @@
 				</table>
 				<div id="btnStyle">
 					<a href="${path}/admin/addCashbook?currentYear=${currentYear}&currentMonth=${currentMonth}&currentDay=${currentDay}">추가</a>
-					<a href="${path}}/admin/cashbookByMonth?currentYear=${currentYear}&currentMonth=${currentMonth}">돌아가기</a>
+					<a href="${path}/admin/cashbookByMonth?currentYear=${currentYear}&currentMonth=${currentMonth}">돌아가기</a>
 				</div>
 			</div>
 		</div>

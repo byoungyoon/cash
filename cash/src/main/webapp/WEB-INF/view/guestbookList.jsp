@@ -15,7 +15,7 @@
 	<div id="page" class="container">
 		<div id="content"><a class="image-style" href="#"><img src="https://ifh.cc/g/zFOXWZ.jpg" width="725" height="300" alt="" /></a>
 			<div id="box1" class="post">
-				<h2 class="title"><a>guest book</a></h2>
+				<h2 class="title"><a>guestbook</a></h2>
 				<div id="btnStyle">
 					<a href="${path}/admin/addGuestbookList">방명록 추가</a>
 				</div>
