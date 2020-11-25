@@ -39,26 +39,25 @@
 						</tr>
 					</table>
 				</c:forEach>
-
-
-				<h2 class="noticeTitle">notice list</h2>
-				<table id="fullListTable">
-					<thead>
-						<tr>
-							<th>notice_id</th>
-							<th>notice_title</th>
-						</tr>
-					</thead>
-					<tbody>
-						<c:forEach var="n" items="${noticeList}">
+				<div class="clearfix">
+					<h2 class="subTitle">notice list</h2>
+					<table id="fullListTable">
+						<thead>
 							<tr>
-								<td>${n.noticeId}</td>
-								<td>${n.noticeTitle}</td>
+								<th>notice_id</th>
+								<th>notice_title</th>
 							</tr>
-						</c:forEach>
-					</tbody>
-				</table>
-
+						</thead>
+						<tbody>
+							<c:forEach var="n" items="${noticeList}">
+								<tr>
+									<td>${n.noticeId}</td>
+									<td>${n.noticeTitle}</td>
+								</tr>
+							</c:forEach>
+						</tbody>
+					</table>
+				</div>
 			</div>
 		</div>
 		<jsp:include page="/WEB-INF/view/inc/menu.jsp"></jsp:include>

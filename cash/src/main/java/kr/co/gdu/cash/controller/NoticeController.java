@@ -11,12 +11,15 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import kr.co.gdu.cash.restservice.CommentService;
 import kr.co.gdu.cash.service.NoticeService;
+import kr.co.gdu.cash.vo.Comment;
 import kr.co.gdu.cash.vo.Notice;
 
 @Controller
 public class NoticeController {
 	@Autowired private NoticeService noticeService;
+	@Autowired private CommentService commentService;
 	// 공지 목록
 	@GetMapping("/admin/noticeList")
 	public String noticeList(Model model,
@@ -54,7 +57,11 @@ public class NoticeController {
 	public String noticeOne(Model model, 
 			@PathVariable(name = "noticeId") int noticeId) {
 		Notice notice = noticeService.getNoticeOneList(noticeId);
+		List<Comment> commentList = commentService.getCommentList(noticeId);
+		int commentListCount = commentService.getCommentListCount(noticeId);
 		model.addAttribute(notice);
+		model.addAttribute("commentList", commentList);
+		model.addAttribute("commentListCount", commentListCount);
 		
 		return "noticeOneList";
 	}

@@ -41,6 +41,27 @@
 					<a href="${path}/admin/deleteNoticeList/${notice.noticeId}">삭제</a>
 				</div>
 			</div>
+			
+			<form method="post" action="${path}/admin/addCommentList">
+				<div id="noticeComment">
+					<input type="hidden" name="noticeId" value="${notice.noticeId}">
+					<textarea name="commentContent" placeholder="댓글을 입력해주세요"></textarea>
+				</div>
+				<div id="btnStyle">
+					<button type="submit">등록</button>
+				</div>
+			</form>
+			<table id="commentListTable">
+				<tr>
+					<th colspan="2">댓글 ${commentListCount}</th>
+				</tr>
+				<c:forEach var="c" items="${commentList}">
+					<tr>
+						<td>${c.commentContent}</td>
+						<td><a href="${path}/admin/deleteCommentList/${notice.noticeId}/${c.commentId}">삭제</a></td>					
+					</tr>
+				</c:forEach>
+			</table>
 
 		</div>
 		<jsp:include page="/WEB-INF/view/inc/menu.jsp"></jsp:include>

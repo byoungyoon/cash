@@ -1,40 +1,67 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<c:set var="path" value="${pageContext.request.contextPath}"/>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>Cashbook</title>
-	<meta name="keywords" content="" />
-	<meta name="description" content="" />
-	<link href='http://fonts.googleapis.com/css?family=Satisfy|Fjalla+One|Open+Sans:400,600,700' rel='stylesheet' type='text/css' />
-	<link href="${path}/resources/default.css" rel="stylesheet" type="text/css" media="all" />
+	<title>cash</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/png" href="resources/images/icons/favicon.ico" />
+	<link rel="stylesheet" type="text/css" href="resources/vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="resources/fonts/iconic/css/material-design-iconic-font.min.css">
+	<link rel="stylesheet" type="text/css" href="resources/vendor/animate/animate.css">
+	<link rel="stylesheet" type="text/css" href="resources/vendor/css-hamburgers/hamburgers.min.css">
+	<link rel="stylesheet" type="text/css" href="resources/vendor/animsition/css/animsition.min.css">
+	<link rel="stylesheet" type="text/css" href="resources/vendor/select2/select2.min.css">
+	<link rel="stylesheet" type="text/css" href="resources/vendor/daterangepicker/daterangepicker.css">
+	<link rel="stylesheet" type="text/css" href="resources/css/util.css">
+	<link rel="stylesheet" type="text/css" href="resources/css/main.css">
 </head>
 <body>
-<div id="wrapper">
-	<div id="page" class="container">
-		<div id="content"><a class="image-style" href="#"><img src="https://ifh.cc/g/zFOXWZ.jpg" width="725" height="300" alt="" /></a>
-			<div id="box1" class="post">
-				<h2 class="title" id="center"><a>Login</a></h2>
-			
-				<form action="${path}/login" method="post">
-					<table id="oneListTable">
-						<tr>
-							<th>ID</th>
-							<td><input type="text" name="id"></td>
-						</tr>
-						<tr>
-							<th>PW</th>
-							<td><input type="password" name="pw"></td>
-						</tr>
-					</table>
-					<div id="btnStyle">
-						<button type="submit">로그인</button>
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<form class="login100-form validate-form" method="post" action="${pageContext.request.contextPath}/login">
+					<span class="login100-form-title p-b-26">Welcome</span>
+					<span class="login100-form-title p-b-48"><i class="zmdi zmdi-font"></i></span>
+					
+					<div class="wrap-input100 validate-input" data-validate="Valid email is: a@b.c">
+						<input class="input100" type="text" name="id">
+						<span class="focus-input100" data-placeholder="ID"></span>
+					</div>
+					
+					<div class="wrap-input100 validate-input" data-validate="Enter password">
+						<span class="btn-show-pass"><i class="zmdi zmdi-eye"></i></span>
+						<input class="input100" type="password" name="pw">
+						<span class="focus-input100" data-placeholder="Password"></span>
+					</div>
+					<div class="container-login100-form-btn">
+						<div class="wrap-login100-form-btn">
+							<div class="login100-form-bgbtn"></div>
+							<button class="login100-form-btn">Login</button>
+						</div>
 					</div>
 				</form>
 			</div>
 		</div>
 	</div>
-	<div class="clearfix">&nbsp;</div>
-</div>
+	<div id="dropDownSelect1"></div>
+	
+	<script src="resources/vendor/jquery/jquery-3.2.1.min.js"></script>
+	<script src="resources/vendor/animsition/js/animsition.min.js"></script>
+	<script src="resources/vendor/bootstrap/js/popper.js"></script>
+	<script src="resources/vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="resources/vendor/select2/select2.min.js"></script>
+	<script src="resources/vendor/daterangepicker/moment.min.js"></script>
+	<script src="resources/vendor/daterangepicker/daterangepicker.js"></script>
+	<script src="resources/vendor/countdowntime/countdowntime.js"></script>
+	<script src="resources/js/main.js"></script>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+	<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+	
+		  gtag('config', 'UA-23581568-13');
+	</script>
+</body>
 </html>
