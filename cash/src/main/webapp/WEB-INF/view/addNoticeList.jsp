@@ -26,10 +26,6 @@
 							<th>notice_content</th>
 							<td><textarea name="noticeContent"></textarea></td>
 						</tr>
-						<tr>
-							<th>Attachments</th>
-							<td><input type="file" name="noticefile"></td>
-						</tr>
 					</table>
 					
 					<div id="btnStyle">

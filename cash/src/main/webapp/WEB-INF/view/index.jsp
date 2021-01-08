@@ -9,6 +9,15 @@
 	<meta name="description" content="" />
 	<link href='http://fonts.googleapis.com/css?family=Satisfy|Fjalla+One|Open+Sans:400,600,700' rel='stylesheet' type='text/css' />
 	<link href="${path}/resources/default.css" rel="stylesheet" type="text/css" media="all" />
+	<style>
+		.row {
+		  display: flex;
+		}
+		#box-center {
+		  flex: 1;
+		  text-align: center;
+		}
+	</style>
 </head>
 <body>
 <div id="wrapper">
@@ -20,31 +29,35 @@
 			</div>
 			<div id="box2">
 				<h2 class="subtitle">Summary of recent income/expenses</h2>
-				<c:forEach var="io" items="${inOutList}">
-					<table id="inOutListTable">
-						<tr>
-							<th colspan="2">${io["날짜"]}</th>
-						</tr>
-						<tr>
-							<td>수입 : </td>
-							<td>${io["수입"]}</td>
-						</tr>
-						<tr>
-							<td>지출 : </td>
-							<td>${io["지출"]}</td>
-						</tr>
-						<tr>
-							<td>합계 : </td>
-							<td>${io["합계"]}</td>
-						</tr>
-					</table>
-				</c:forEach>
-				<div class="clearfix">
+					<div class="row">
+						<c:forEach var="io" items="${inOutList}">
+							<div id="box-center">
+								<table id="inOutListTable">
+									<tr>
+										<th colspan="2">${io["날짜"]}</th>
+									</tr>
+									<tr>
+										<td>수입 : </td>
+										<td>${io["수입"]}</td>
+									</tr>
+									<tr>
+										<td>지출 : </td>
+										<td>${io["지출"]}</td>
+									</tr>
+									<tr>
+										<td>합계 : </td>
+										<td>${io["합계"]}</td>
+									</tr>
+								</table>
+							</div>
+						</c:forEach>
+					</div>
+				<div id="subContent" style="margin-top: 30px;">
 					<h2 class="subTitle">notice list</h2>
-					<table id="fullListTable">
+					<table id="fullListTable" style="margin-top: -10px">
 						<thead>
 							<tr>
-								<th>notice_id</th>
+								<th>notice_id</th>	
 								<th>notice_title</th>
 							</tr>
 						</thead>
