@@ -25,9 +25,30 @@
 		<div id="content"><a class="image-style" href="#"><img src="https://ifh.cc/g/zFOXWZ.jpg" width="725" height="300" alt="" /></a>
 			<div id="box1" class="post">
 				<h2 class="title"><a>welcome to my cashbook</a></h2>
-				<p>프로젝트 설명</p>
+				<table id="inOutListTable" style="width:100%">
+					<tr>
+						<td style="width:20%;">제작자</td>
+						<td>이병윤</td>
+					</tr>
+					<tr>
+						<td style="width:20%;">기간</td>
+						<td>20.11.19 ~ 20.11.25</td>
+					</tr>
+					<tr>
+						<td style="width:20%;">사용 방법</td>
+						<td>Spring</td>
+					</tr>
+					<tr>
+						<td style="width:20%;">서버</td>
+						<td>AWS EC2</td>
+					</tr>
+					<tr>
+						<td style="width:20%;">구조</td>
+						<td>총 5개의 페이지로 이루어지며, 달력을 표시하여 수익, 지출을 표시하였고 공지사항과 방명록을 구현하였다.</td>
+					</tr>
+				</table>
 			</div>
-			<div id="box2">
+			<div id="box2" style="margin-top: 25px">
 				<h2 class="subtitle">Summary of recent income/expenses</h2>
 					<div class="row">
 						<c:forEach var="io" items="${inOutList}">
